@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+  <script src="js/jquery-3.3.1.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/jquery.slide.js"></script>
+    <title>Plugin jQuery</title>
+    <link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="./css/index.css" />
+    <link rel="stylesheet" href="./css/jquery.slide.css" />
+    <style>
+    h1 { margin-top: 150px; text-align: center; }
+  </style>
+  </head>
+  <body>
+<div class="jquery-script-clear"></div>
+</div>
+</div>
+    <h1>Background Slideshow With Image Lazy Load Demo</h1>
+    <div class="slide">
+      <ul>
+        <li data-bg="https://picsum.photos/1200/450/?random"></li>
+        <li data-bg="https://picsum.photos/1200/460/?random"></li>
+        <li data-bg="https://picsum.photos/1200/480/?random"></li>
+        <li data-bg="https://picsum.photos/1200/490/?random"></li>
+        <li data-bg="https://picsum.photos/1300/490/?random"></li>
+      </ul>
+    </div>
+
+    <script type="text/javascript">
+      $(function() {
+        $('.slide').slide({
+          'slideSpeed': 3000,
+          'isShowArrow': true,
+          'dotsEvent': 'mouseenter',
+          'isLoadAllImgs': true
+        });
+      });
+    </script>
+  </body>
+</html>

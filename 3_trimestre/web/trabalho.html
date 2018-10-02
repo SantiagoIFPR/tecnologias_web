@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="br">
+<head>
+  <meta charset="utf-8">
+
+  <script src="js/jquery-3.3.1.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/jquery.slide.js"></script>
+
+  <title>Plugin jQuery</title>
+
+  <link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/customizado.css" rel="stylesheet">
+  <link rel="stylesheet" href="./css/index.css" />
+  <link rel="stylesheet" href="./css/jquery.slide.css" />
+
+  <!-- <style>
+  h1 { margin-top: 150px; text-align: center; }
+  </style> -->
+</head>
+
+<body>
+
+  <header>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+      <a class="navbar-brand" href="#">Santiago Molina</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Análise e Desenvolvimento de Sistemas <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Tecnologias Web</a>
+          </li>
+        </ul>
+        <form class="form-inline mt-2 mt-md-0">
+          <input class="form-control mr-sm-2" type="text" placeholder="Buscar" aria-label="Buscar">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+        </form>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container">
+    <h1 class="mt-5">Slideshow com jQuery</h1>
+    <p class="lead">O que é o plugin?</p>
+    <ul>
+      <li>Este é um plugin de apresentação de slides que tem a capacidade de carregar imagens de fundo sob demanda.</li>
+    </ul>
+    <p class="lead">Como faz para utilizá-lo?</p>
+    <h5> É necessário importar a biblioteca jQuery e a biblioteca do CSS.</h5>
+      <pre style='color:#000000;background:#ffffff;'>
+      <span style='color:#44aadd; '>&lt;</span>script src<span style='color:#808030; '>=</span><span style='color:#0000e6; '>"js/jquery-3.3.1.js"</span><span style='color:#44aadd; '>></span><span style='color:#44aadd; '>&lt;</span><span style='color:#44aadd; '>/</span>script<span style='color:#44aadd; '>></span>
+      <span style='color:#44aadd; '>&lt;</span>script src<span style='color:#808030; '>=</span><span style='color:#0000e6; '>"js/popper.min.js"</span><span style='color:#44aadd; '>></span><span style='color:#44aadd; '>&lt;</span><span style='color:#44aadd; '>/</span>script<span style='color:#44aadd; '>></span>
+      <span style='color:#44aadd; '>&lt;</span>script src<span style='color:#808030; '>=</span><span style='color:#0000e6; '>"js/bootstrap.min.js"</span><span style='color:#44aadd; '>></span><span style='color:#44aadd; '>&lt;</span><span style='color:#44aadd; '>/</span>script<span style='color:#44aadd; '>></span>
+      <span style='color:#44aadd; '>&lt;</span>script src<span style='color:#808030; '>=</span><span style='color:#0000e6; '>"js/jquery.slide.js"</span><span style='color:#44aadd; '>></span><span style='color:#44aadd; '>&lt;</span><span style='color:#44aadd; '>/</span>script<span style='color:#44aadd; '>></span>
+      </pre>
+    <h5> Importe os arquivos do plugin jQuery para a página. </h5>
+      <pre style='color:#000000;background:#ffffff;'>
+      <span style='color:#44aadd; '>&lt;</span>link href<span style='color:#808030; '>=</span><span style='color:#0000e6; '>"https://www.jqueryscript.net/css/jquerysctipttop.css"</span> rel<span style='color:#808030; '>=</span><span style='color:#0000e6; '>"stylesheet"</span> <span style='color:#400000; '>type</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"text/css"</span><span style='color:#44aadd; '>></span>
+      <span style='color:#44aadd; '>&lt;</span>link href<span style='color:#808030; '>=</span><span style='color:#0000e6; '>"css/bootstrap.min.css"</span> rel<span style='color:#808030; '>=</span><span style='color:#0000e6; '>"stylesheet"</span><span style='color:#44aadd; '>></span>
+      <span style='color:#44aadd; '>&lt;</span>link href<span style='color:#808030; '>=</span><span style='color:#0000e6; '>"css/customizado.css"</span> rel<span style='color:#808030; '>=</span><span style='color:#0000e6; '>"stylesheet"</span><span style='color:#44aadd; '>></span>
+      <span style='color:#44aadd; '>&lt;</span>link rel<span style='color:#808030; '>=</span><span style='color:#0000e6; '>"stylesheet"</span> href<span style='color:#808030; '>=</span><span style='color:#0000e6; '>"./css/index.css"</span> <span style='color:#44aadd; '>/</span><span style='color:#44aadd; '>></span>
+      <span style='color:#44aadd; '>&lt;</span>link rel<span style='color:#808030; '>=</span><span style='color:#0000e6; '>"stylesheet"</span> href<span style='color:#808030; '>=</span><span style='color:#0000e6; '>"./css/jquery.slide.css"</span> <span style='color:#44aadd; '>/</span><span style='color:#44aadd; '>></span>
+      </pre>
+
+      <h5> Crie uma lista html para a apresentação e adicione suas próprias imagens de fundo aos slides usando o atributo data-bg.</h5>
+      <pre style='color:#000000;background:#ffffff;'>
+      <span style='color:#44aadd; '>&lt;</span>div <span style='color:#800000; font-weight:bold; '>class</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"slide"</span><span style='color:#44aadd; '>></span>
+      <span style='color:#44aadd; '>&lt;</span>ul<span style='color:#44aadd; '>></span>
+      <span style='color:#44aadd; '>&lt;</span>li data<span style='color:#44aadd; '>-</span>bg<span style='color:#808030; '>=</span><span style='color:#0000e6; '>"https://picsum.photos/1200/450/?random"</span><span style='color:#44aadd; '>></span><span style='color:#44aadd; '>&lt;</span><span style='color:#44aadd; '>/</span>li<span style='color:#44aadd; '>></span>
+      <span style='color:#44aadd; '>&lt;</span>li data<span style='color:#44aadd; '>-</span>bg<span style='color:#808030; '>=</span><span style='color:#0000e6; '>"https://picsum.photos/1200/460/?random"</span><span style='color:#44aadd; '>></span><span style='color:#44aadd; '>&lt;</span><span style='color:#44aadd; '>/</span>li<span style='color:#44aadd; '>></span>
+      <span style='color:#44aadd; '>&lt;</span>li data<span style='color:#44aadd; '>-</span>bg<span style='color:#808030; '>=</span><span style='color:#0000e6; '>"https://picsum.photos/1200/480/?random"</span><span style='color:#44aadd; '>></span><span style='color:#44aadd; '>&lt;</span><span style='color:#44aadd; '>/</span>li<span style='color:#44aadd; '>></span>
+      <span style='color:#44aadd; '>&lt;</span>li data<span style='color:#44aadd; '>-</span>bg<span style='color:#808030; '>=</span><span style='color:#0000e6; '>"https://picsum.photos/1200/490/?random"</span><span style='color:#44aadd; '>></span><span style='color:#44aadd; '>&lt;</span><span style='color:#44aadd; '>/</span>li<span style='color:#44aadd; '>></span>
+      <span style='color:#44aadd; '>&lt;</span>li data<span style='color:#44aadd; '>-</span>bg<span style='color:#808030; '>=</span><span style='color:#0000e6; '>"https://picsum.photos/1300/490/?random"</span><span style='color:#44aadd; '>></span><span style='color:#44aadd; '>&lt;</span><span style='color:#44aadd; '>/</span>li<span style='color:#44aadd; '>></span>
+      <span style='color:#44aadd; '>&lt;</span><span style='color:#44aadd; '>/</span>ul<span style='color:#44aadd; '>></span>
+      <span style='color:#44aadd; '>&lt;</span><span style='color:#44aadd; '>/</span>div<span style='color:#44aadd; '>></span>
+      </pre>
+
+      <h5>Para inicializar a apresentação de slides, basta chamar a tag slide dentro da função.</h5>
+      <pre style='color:#000000;background:#ffffff;'>
+      <span style='color:#44aadd; '>&lt;</span>script <span style='color:#400000; '>type</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"text/javascript"</span><span style='color:#44aadd; '>></span>
+      $<span style='color:#808030; '>(</span>function<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span> <span style='color:#800080; '>{</span>
+      $<span style='color:#808030; '>(</span><span style='color:#0000e6; '>'.slide'</span><span style='color:#808030; '>)</span><span style='color:#808030; '>.</span>slide<span style='color:#808030; '>(</span><span style='color:#800080; '>{</span>
+      <span style='color:#0000e6; '>'slideSpeed'</span><span style='color:#808030; '>:</span> <span style='color:#008c00; '>3000</span><span style='color:#808030; '>,</span>
+      <span style='color:#0000e6; '>'isShowArrow'</span><span style='color:#808030; '>:</span> <span style='color:#074726; '>true</span><span style='color:#808030; '>,</span>
+      <span style='color:#0000e6; '>'dotsEvent'</span><span style='color:#808030; '>:</span> <span style='color:#0000e6; '>'mouseenter'</span><span style='color:#808030; '>,</span>
+      <span style='color:#0000e6; '>'isLoadAllImgs'</span><span style='color:#808030; '>:</span> <span style='color:#074726; '>true</span>
+      <span style='color:#800080; '>}</span><span style='color:#808030; '>)</span><span style='color:#808030; '>;</span>
+      <span style='color:#800080; '>}</span><span style='color:#808030; '>)</span><span style='color:#808030; '>;</span>
+      <span style='color:#44aadd; '>&lt;</span><span style='color:#44aadd; '>/</span>script<span style='color:#44aadd; '>></span>
+      </pre>
+
+    <p class="lead">Exemplo de Utilização:</p>
+    <div class="slide">
+      <ul>
+        <li data-bg="https://picsum.photos/1200/450/?random"></li>
+        <li data-bg="https://picsum.photos/1200/460/?random"></li>
+        <li data-bg="https://picsum.photos/1200/480/?random"></li>
+        <li data-bg="https://picsum.photos/1200/490/?random"></li>
+        <li data-bg="https://picsum.photos/1300/490/?random"></li>
+      </ul>
+    </div>
+
+    <script>
+    $(function() {
+      $('.slide').slide({
+        'slideSpeed': 3000,
+        'isShowArrow': true,
+        'dotsEvent': 'mouseenter',
+        'isLoadAllImgs': true
+      });
+    });
+    </script>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <span class="text-muted">Análise e Desenvolvimento de Sistemas - 1 ano.</span>
+      </div>
+    </footer>
+
+  </body>
+  </html>
